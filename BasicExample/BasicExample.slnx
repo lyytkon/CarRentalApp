@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="TimeConversion/TimeConversion.csproj" />
+  <Project Path="UserApp/UserApp.csproj" />
+</Solution>
