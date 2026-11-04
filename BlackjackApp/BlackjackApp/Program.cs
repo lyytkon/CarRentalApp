@@ -75,14 +75,31 @@ class Program
 		int jSum = LaskeSumma(jakaja);
 
 		// Voittologiikka
+		// Voittologiikka
 		if (jSum > 21)
+		{
+			Console.ForegroundColor = ConsoleColor.Green;
 			Console.WriteLine("Jakaja meni yli 21. Voitit!");
+			Console.ResetColor();
+		}
 		else if (pSum > jSum)
+		{
+			Console.ForegroundColor = ConsoleColor.Green;
 			Console.WriteLine("Voitit!");
+			Console.ResetColor();
+		}
 		else if (pSum < jSum)
+		{
+			Console.ForegroundColor = ConsoleColor.Red;
 			Console.WriteLine("Hävisit.");
+			Console.ResetColor();
+		}
 		else
+		{
+			Console.ForegroundColor = ConsoleColor.Yellow;
 			Console.WriteLine("Tasapeli.");
+			Console.ResetColor();
+		}
 	}
 
 	static int NostaKortti()
