@@ -27,11 +27,41 @@ public class Car
 		int year,
 		decimal dailyRate)
 	{
-		// Lisää tähän omat tarkistuksesi:
-		// - tekstit eivät saa olla tyhjiä
-		// - year on järkevä vuosiluku
-		// - dailyRate ei saa olla negatiivinen
+		if (string.IsNullOrWhiteSpace(registrationNumber))
+		{
+			throw new ArgumentException(
+				"Registration number cannot be empty.",
+				nameof(registrationNumber));
+		}
 
+		if (string.IsNullOrWhiteSpace(brand))
+		{
+			throw new ArgumentException(
+				"Brand cannot be empty.",
+				nameof(brand));
+		}
+
+		if (string.IsNullOrWhiteSpace(model))
+		{
+			throw new ArgumentException(
+				"Model cannot be empty.",
+				nameof(model));
+		}
+
+		if (year < 1886 || year > DateTime.UtcNow.Year + 1)
+		{
+			throw new ArgumentOutOfRangeException(
+				nameof(year),
+				"Year must be between 1886 and next year.");
+		}
+
+		if (dailyRate < 0)
+		{
+			throw new ArgumentOutOfRangeException(
+				nameof(dailyRate),
+				"Daily rate cannot be negative.");
+		}
+		
 		RegistrationNumber = registrationNumber;
 		Brand = brand;
 		Model = model;
