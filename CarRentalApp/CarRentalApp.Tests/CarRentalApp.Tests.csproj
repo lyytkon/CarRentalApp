@@ -25,4 +25,9 @@
     <Using Include="NUnit.Framework" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Domain\" />
+    <Folder Include="Integration\" />
+  </ItemGroup>
+
 </Project>
