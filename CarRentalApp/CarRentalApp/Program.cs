@@ -28,10 +28,10 @@ while (true)
 		var model = Console.ReadLine() ?? "";
 
 		Console.Write("Year: ");
-		var year = int.Parse(Console.ReadLine() ?? "0");
+		var year = ReadInt("Year: ");
 
 		Console.Write("Daily rate: ");
-		var dailyRate = decimal.Parse(Console.ReadLine() ?? "0");
+		var dailyRate = ReadDecimal("Daily rate: ");
 
 		var car = new Car(
 			registrationNumber,
@@ -127,6 +127,35 @@ while (true)
 	else
 	{
 		Console.WriteLine("Unknown choice.");
+	}
+	static int ReadInt(string message)
+	{
+		while (true)
+		{
+			Console.Write(message);
+
+			if (int.TryParse(Console.ReadLine(), out var value))
+			{
+				return value;
+			}
+
+			Console.WriteLine("Please enter a valid whole number.");
+		}
+	}
+
+	static decimal ReadDecimal(string message)
+	{
+		while (true)
+		{
+			Console.Write(message);
+
+			if (decimal.TryParse(Console.ReadLine(), out var value))
+			{
+				return value;
+			}
+
+			Console.WriteLine("Please enter a valid number.");
+		}
 	}
 
 }
