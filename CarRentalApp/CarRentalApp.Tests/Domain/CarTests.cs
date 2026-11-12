@@ -27,4 +27,15 @@ public class CarTests
 				2022,
 				-10.00m));
 	}
+	[Test]
+	public void EmptyRegistrationNumber_ThrowsException()
+	{
+		Assert.Throws<ArgumentException>(() =>
+			new Car(
+				"",
+				"Toyota",
+				"Corolla",
+				2022,
+				45.00m));
+	}
 }
