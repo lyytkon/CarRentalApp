@@ -10,6 +10,7 @@ while (true)
 	Console.WriteLine("1. Add car");
 	Console.WriteLine("2. List cars");
 	Console.WriteLine("3. Delete car");
+	Console.WriteLine("4. Update car");
 	Console.WriteLine("0. Exit");
 	Console.Write("Choose: ");
 
@@ -76,6 +77,49 @@ while (true)
 			Console.WriteLine("Car not found.");
 		}
 	}
+	else if (choice == "4")
+	{
+		Console.Write("Car ID to update: ");
+		var id = int.Parse(Console.ReadLine() ?? "0");
+
+		var existingCar = repository.GetAll()
+			.FirstOrDefault(car => car.Id == id);
+
+		if (existingCar is null)
+		{
+			Console.WriteLine("Car not found.");
+			continue;
+		}
+
+		Console.Write("New registration number: ");
+		var registrationNumber = Console.ReadLine() ?? "";
+
+		Console.Write("New brand: ");
+		var brand = Console.ReadLine() ?? "";
+
+		Console.Write("New model: ");
+		var model = Console.ReadLine() ?? "";
+
+		Console.Write("New year: ");
+		var year = int.Parse(Console.ReadLine() ?? "0");
+
+		Console.Write("New daily rate: ");
+		var dailyRate = decimal.Parse(Console.ReadLine() ?? "0");
+
+		var updatedCar = new Car(
+			registrationNumber,
+			brand,
+			model,
+			year,
+			dailyRate)
+		{
+			Id = id,
+			IsAvailable = existingCar.IsAvailable
+		};
+
+		repository.Update(updatedCar);
+		Console.WriteLine("Car updated.");
+	}
 	else if (choice == "0")
 	{
 		break;
@@ -84,4 +128,5 @@ while (true)
 	{
 		Console.WriteLine("Unknown choice.");
 	}
+
 }

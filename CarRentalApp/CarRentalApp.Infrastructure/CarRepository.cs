@@ -50,6 +50,26 @@ public class CarRepository
 		return true;
 	}
 
+	public bool Update(Car updatedCar)
+	{
+		var existingCar = _cars.FirstOrDefault(car => car.Id == updatedCar.Id);
+
+		if (existingCar is null)
+		{
+			return false;
+		}
+
+		existingCar.RegistrationNumber = updatedCar.RegistrationNumber;
+		existingCar.Brand = updatedCar.Brand;
+		existingCar.Model = updatedCar.Model;
+		existingCar.Year = updatedCar.Year;
+		existingCar.DailyRate = updatedCar.DailyRate;
+		existingCar.IsAvailable = updatedCar.IsAvailable;
+
+		Save();
+		return true;
+	}
+
 	private void Save()
 	{
 		var options = new JsonSerializerOptions
