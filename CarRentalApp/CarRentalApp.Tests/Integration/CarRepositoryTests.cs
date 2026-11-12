@@ -76,4 +76,23 @@ public class CarRepositoryTests
 		Assert.That(savedCar.Model, Is.EqualTo("V60"));
 		Assert.That(savedCar.DailyRate, Is.EqualTo(60.00m));
 	}
+	[Test]
+	public void UpdateMissingCar_ReturnsFalse()
+	{
+		var repository = new CarRepository();
+
+		var car = new Car(
+			"MISSING-123",
+			"Toyota",
+			"Corolla",
+			2022,
+			45.00m)
+		{
+			Id = 9999
+		};
+
+		var updated = repository.Update(car);
+
+		Assert.That(updated, Is.False);
+	}
 }
