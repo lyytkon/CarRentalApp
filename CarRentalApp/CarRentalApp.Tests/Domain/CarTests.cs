@@ -16,4 +16,15 @@ public class CarTests
 
 		Assert.That(car.IsAvailable, Is.True);
 	}
+	[Test]
+	public void NegativeDailyRate_ThrowsException()
+	{
+		Assert.Throws<ArgumentOutOfRangeException>(() =>
+			new Car(
+				"ABC-123",
+				"Toyota",
+				"Corolla",
+				2022,
+				-10.00m));
+	}
 }
