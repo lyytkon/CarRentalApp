@@ -6,7 +6,7 @@ namespace CarRentalApp.Domain.Entities;
 
 public class Car
 {
-	public int Id { get; private set; }
+	public int Id { get; set; }
 
 	public string RegistrationNumber { get; private set; }
 
