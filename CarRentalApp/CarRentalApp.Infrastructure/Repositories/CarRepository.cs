@@ -1,9 +1,13 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using CarRentalApp.Domain.Entities;
 
 namespace CarRentalApp.Infrastructure.Repositories;
 
-public class CarRepository
+/// <summary>
+/// Implementation of the ICarRepository interface.
+/// Handles car data persistence using JSON file storage.
+/// </summary>
+public class CarRepository : ICarRepository
 {
 	private readonly string _filePath = "cars.json";
 	private readonly List<Car> _cars;
@@ -26,6 +30,11 @@ public class CarRepository
 
 	public void Add(Car car)
 	{
+		if (car == null)
+		{
+			throw new ArgumentNullException(nameof(car));
+		}
+
 		car.Id = _nextId++;
 		_cars.Add(car);
 		Save();
@@ -34,6 +43,11 @@ public class CarRepository
 	public List<Car> GetAll()
 	{
 		return _cars;
+	}
+
+	public Car? GetById(int id)
+	{
+		return _cars.FirstOrDefault(car => car.Id == id);
 	}
 
 	public bool Delete(int id)
@@ -52,6 +66,11 @@ public class CarRepository
 
 	public bool Update(Car updatedCar)
 	{
+		if (updatedCar == null)
+		{
+			throw new ArgumentNullException(nameof(updatedCar));
+		}
+
 		var existingCar = _cars.FirstOrDefault(car => car.Id == updatedCar.Id);
 
 		if (existingCar is null)
