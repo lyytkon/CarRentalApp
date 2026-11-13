@@ -42,11 +42,11 @@ public class Car
 				nameof(model));
 		}
 
-		if (year < 1886 || year > DateTime.UtcNow.Year + 1)
+		if (year < 1800 || year > DateTime.UtcNow.Year + 1)
 		{
 			throw new ArgumentOutOfRangeException(
 				nameof(year),
-				"Year must be between 1886 and next year.");
+				"Year must be between 1800 and next year.");
 		}
 
 		if (dailyRate < 0)
