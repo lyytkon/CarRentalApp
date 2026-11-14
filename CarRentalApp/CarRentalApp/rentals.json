@@ -1,0 +1,34 @@
+[
+  {
+    "Id": 1,
+    "CustomerId": 1,
+    "CarId": 1,
+    "RentalStartDate": "2026-11-15T00:00:00",
+    "RentalEndDate": "2026-11-18T00:00:00",
+    "Status": 2
+  },
+  {
+    "Id": 2,
+    "CustomerId": 2,
+    "CarId": 2,
+    "RentalStartDate": "2026-11-20T00:00:00",
+    "RentalEndDate": null,
+    "Status": 1
+  },
+  {
+    "Id": 3,
+    "CustomerId": 3,
+    "CarId": 4,
+    "RentalStartDate": "2026-11-21T00:00:00",
+    "RentalEndDate": "2026-11-23T00:00:00",
+    "Status": 2
+  },
+  {
+    "Id": 4,
+    "CustomerId": 4,
+    "CarId": 5,
+    "RentalStartDate": "2026-11-25T00:00:00",
+    "RentalEndDate": null,
+    "Status": 1
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "Id": 1,
+    "RegistrationNumber": "AB-12345",
+    "Brand": "Toyota",
+    "Model": "Corolla",
+    "Year": 2022,
+    "DailyRate": 49.99,
+    "IsAvailable": true
+  },
+  {
+    "Id": 2,
+    "RegistrationNumber": "CD-67890",
+    "Brand": "Honda",
+    "Model": "Civic",
+    "Year": 2023,
+    "DailyRate": 55.00,
+    "IsAvailable": false
+  },
+  {
+    "Id": 3,
+    "RegistrationNumber": "EF-11111",
+    "Brand": "Volkswagen",
+    "Model": "Golf",
+    "Year": 2021,
+    "DailyRate": 45.00,
+    "IsAvailable": true
+  },
+  {
+    "Id": 4,
+    "RegistrationNumber": "GH-22222",
+    "Brand": "BMW",
+    "Model": "320i",
+    "Year": 2024,
+    "DailyRate": 75.00,
+    "IsAvailable": true
+  },
+  {
+    "Id": 5,
+    "RegistrationNumber": "IJ-33333",
+    "Brand": "Ford",
+    "Model": "Focus",
+    "Year": 2022,
+    "DailyRate": 40.00,
+    "IsAvailable": true
+  }
+]

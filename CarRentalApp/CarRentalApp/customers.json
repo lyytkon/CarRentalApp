@@ -1,0 +1,30 @@
+[
+  {
+    "Id": 1,
+    "Name": "John Doe",
+    "Email": "john.doe@example.com",
+    "PhoneNumber": "+47 98765432",
+    "LicenseNumber": "DL-201001-123456"
+  },
+  {
+    "Id": 2,
+    "Name": "Jane Smith",
+    "Email": "jane.smith@example.com",
+    "PhoneNumber": "+47 87654321",
+    "LicenseNumber": "DL-201002-789012"
+  },
+  {
+    "Id": 3,
+    "Name": "Bob Johnson",
+    "Email": "bob.johnson@example.com",
+    "PhoneNumber": "+47 91234567",
+    "LicenseNumber": "DL-201003-345678"
+  },
+  {
+    "Id": 4,
+    "Name": "Anna Nielsen",
+    "Email": "anna.nielsen@example.com",
+    "PhoneNumber": "+47 92341234",
+    "LicenseNumber": "DL-201004-901234"
+  }
+]
